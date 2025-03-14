@@ -206,7 +206,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -221,7 +221,7 @@ class MyApp extends StatelessWidget {
 }
 
 class ScrollViewExample extends StatelessWidget {
-  const ScrollViewExample({Key? key}) : super(key: key);
+  const ScrollViewExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -296,9 +296,9 @@ class ScrollViewExample extends StatelessWidget {
                   onPressed: (){
                     debugPrint('Кнопка нажата');
                   },
-                child: Icon(Icons.ads_click),
                 foregroundColor: Colors.yellow,
                 backgroundColor: Colors.black,
+                child: const Icon(Icons.ads_click),
 
               ),
             ),
