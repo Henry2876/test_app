@@ -1,135 +1,123 @@
 //----------------ЗАДАНИЕ 1.3----------------------
 
-import 'package:flutter/material.dart';
-
-void main()=>runApp(const MyApp());
-
-
-class MyApp extends StatelessWidget{
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context){
-    final SizeScreen = MediaQuery.of(context).size;
-    return MaterialApp(
-      title: 'Stack',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('___Stack___'),
-          titleTextStyle: const TextStyle(fontSize: 30,color: Colors.yellow),
-          toolbarHeight: 50,
-          backgroundColor: Colors.red,
-          foregroundColor: Colors.yellow,
-          centerTitle: true,
-
-          leading: IconButton(onPressed:()=>debugPrint('Размеры $SizeScreen'), icon: const Icon(Icons.format_size)),
-          actions: [IconButton(onPressed:()=>debugPrint('Поисковая строка открыта'), icon: const Icon(Icons.search)),],
-        ),
-
-        body:  Stack(
-            children: [
-              Positioned(
-                  top: 10,
-                  right:10,
-                  child: SizedBox(height: 675, width: 405,child: Container(color: const Color(
-                      0xFFF6F6F6)))
-              ),
-              Positioned(
-                  top: 10,
-                  left:0,
-                  child: SizedBox(height: 325, width: 325,child: Container(color: const Color(
-                      0xFF0011C8)))
-              ),
-              Positioned(
-                  top: 12,
-                  left:0,
-                  child: SizedBox(height: 320, width: 320,child: Container(color: const Color(
-                      0xFFEB2920)))
-              ),
-              Positioned(
-                  top: 12,
-                  left:0,
-                  child: SizedBox(height: 55, width: 55,child: Container(color: const Color(
-                      0xFFC49AAA)))
-              ),
-              Positioned(
-                  top: 12,
-                  left:0,
-                  child: SizedBox(height: 52, width: 52,child: Container(color: const Color(
-                      0xFF8DC302)))
-              ),
-              Positioned(
-                  top: 12,
-                  left:265,
-                  child: SizedBox(height: 55, width: 55,child: Container(color: const Color(
-                      0xFF516161)))
-              ),
-              Positioned(
-                  top: 12,
-                  left:268,
-                  child: SizedBox(height: 52, width: 52,child: Container(color: const Color(
-                      0xFF000000)))
-              ),
-              Positioned(
-                  top: 12,
-                  left:295,
-                  child: SizedBox(height: 25, width: 25,child: Container(color: const Color(
-                      0xFFBDB9B5)))
-              ),
-              Positioned(
-                  top: 12,
-                  left:298,
-                  child: SizedBox(height: 22, width: 22,child: Container(color: const Color(
-                      0xFFFC7A02)))
-              ),
-              Positioned(
-                  top: 277,
-                  left:0,
-                  child: SizedBox(height: 55, width: 55,child: Container(color: const Color(
-                      0xFF70BED7)))
-              ),
-              Positioned(
-                  top: 280,
-                  left:0,
-                  child: SizedBox(height: 52, width: 52,child: Container(color: const Color(
-                      0xFF2BAADF)))
-              ),
-              Positioned(
-                  top: 145,
-                  left:145,
-                  child: SizedBox(height: 55, width: 55,child: Container(color: const Color(
-                      0xFFADC0CB)))
-              ),
-              Positioned(
-                  top: 147,
-                  left:147,
-                  child: SizedBox(height: 51, width: 51,child: Container(color: const Color(
-                      0xFF9E5AC3)))
-              ),
-
-            ],
-
-          ),
-        ),
-    );
-  }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+// import 'package:flutter/material.dart';
+//
+// void main()=>runApp(const MyApp());
+//
+//
+// class MyApp extends StatelessWidget{
+//   const MyApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context){
+//     final SizeScreen = MediaQuery.of(context).size;
+//     return MaterialApp(
+//       title: 'Stack',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData.dark(),
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('___Stack___'),
+//           titleTextStyle: const TextStyle(fontSize: 30,color: Colors.yellow),
+//           toolbarHeight: 50,
+//           backgroundColor: Colors.red,
+//           foregroundColor: Colors.yellow,
+//           centerTitle: true,
+//
+//           leading: IconButton(onPressed:()=>debugPrint('Размеры $SizeScreen'), icon: const Icon(Icons.format_size)),
+//           actions: [IconButton(onPressed:()=>debugPrint('Поисковая строка открыта'), icon: const Icon(Icons.search)),],
+//         ),
+//
+//         body:  Stack(
+//             children: [
+//               Positioned(
+//                   top: 10,
+//                   right:10,
+//                   child: SizedBox(height: 675, width: 405,child: Container(color: const Color(
+//                       0xFFF6F6F6)))
+//               ),
+//               Positioned(
+//                   top: 10,
+//                   left:0,
+//                   child: SizedBox(height: 325, width: 325,child: Container(color: const Color(
+//                       0xFF0011C8)))
+//               ),
+//               Positioned(
+//                   top: 12,
+//                   left:0,
+//                   child: SizedBox(height: 320, width: 320,child: Container(color: const Color(
+//                       0xFFEB2920)))
+//               ),
+//               Positioned(
+//                   top: 12,
+//                   left:0,
+//                   child: SizedBox(height: 55, width: 55,child: Container(color: const Color(
+//                       0xFFC49AAA)))
+//               ),
+//               Positioned(
+//                   top: 12,
+//                   left:0,
+//                   child: SizedBox(height: 52, width: 52,child: Container(color: const Color(
+//                       0xFF8DC302)))
+//               ),
+//               Positioned(
+//                   top: 12,
+//                   left:265,
+//                   child: SizedBox(height: 55, width: 55,child: Container(color: const Color(
+//                       0xFF516161)))
+//               ),
+//               Positioned(
+//                   top: 12,
+//                   left:268,
+//                   child: SizedBox(height: 52, width: 52,child: Container(color: const Color(
+//                       0xFF000000)))
+//               ),
+//               Positioned(
+//                   top: 12,
+//                   left:295,
+//                   child: SizedBox(height: 25, width: 25,child: Container(color: const Color(
+//                       0xFFBDB9B5)))
+//               ),
+//               Positioned(
+//                   top: 12,
+//                   left:298,
+//                   child: SizedBox(height: 22, width: 22,child: Container(color: const Color(
+//                       0xFFFC7A02)))
+//               ),
+//               Positioned(
+//                   top: 277,
+//                   left:0,
+//                   child: SizedBox(height: 55, width: 55,child: Container(color: const Color(
+//                       0xFF70BED7)))
+//               ),
+//               Positioned(
+//                   top: 280,
+//                   left:0,
+//                   child: SizedBox(height: 52, width: 52,child: Container(color: const Color(
+//                       0xFF2BAADF)))
+//               ),
+//               Positioned(
+//                   top: 145,
+//                   left:145,
+//                   child: SizedBox(height: 55, width: 55,child: Container(color: const Color(
+//                       0xFFADC0CB)))
+//               ),
+//               Positioned(
+//                   top: 147,
+//                   left:147,
+//                   child: SizedBox(height: 51, width: 51,child: Container(color: const Color(
+//                       0xFF9E5AC3)))
+//               ),
+//
+//             ],
+//
+//           ),
+//         ),
+//     );
+//   }
+//
+// }
+//
 
 
 
@@ -141,64 +129,64 @@ class MyApp extends StatelessWidget{
 
 
 
-// import 'package:flutter/material.dart';
-//
-// void main() =>runApp(MyApp());
-//
-//
-// class MyApp extends StatelessWidget{
-//   const MyApp({Key? key}) : super (key : key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//
-//     return MaterialApp(
-//       title: 'Row Пример',
-//       debugShowCheckedModeBanner: false,
-//       theme: ThemeData.dark(),
-//       home: Scaffold(
-//         appBar: AppBar(
-//           backgroundColor: Colors.blue,
-//           foregroundColor: Colors.black87,
-//           centerTitle: true,
-//           toolbarHeight: 50,
-//           title: Text('___Row___'),
-//
-//           leading: IconButton(onPressed: ()=>debugPrint('Вы вошли в меню'), icon: Icon(Icons.menu)),
-//           actions: [IconButton(onPressed: ()=>debugPrint('Вы вошли в поиск'), icon: Icon(Icons.search))],
-//          // iconTheme: IconThemeData(color: Colors.black87, size: 30),
-//         ),
-//         body:Container(child:  Row(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           crossAxisAlignment: CrossAxisAlignment.center,
-//           children: [
-//             Container(
-//               child: Icon(
-//                   Icons.scale,size: 50,),
-//               color: Colors.yellow,),
-//             SizedBox(width: 20),
-//             Container(child: Icon(
-//                 Icons.scale,size: 50,),
-//               color: Colors.green,),
-//             SizedBox(width: 20),
-//
-//             Container(child: Icon(
-//                 Icons.scale,size: 50,),
-//               color: Colors.blue,),
-//             SizedBox(width: 20),
-//             Container(child: Icon(
-//                 Icons.scale,size: 50,),
-//               color: Colors.red,),
-//             SizedBox(width: 20),
-//           ],
-//         ),
-//           alignment: Alignment.center,
-//         ),
-//       ),
-//
-//     );
-//   }
-// }
+import 'package:flutter/material.dart';
+
+void main() =>runApp(MyApp());
+
+
+class MyApp extends StatelessWidget{
+  const MyApp({Key? key}) : super (key : key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp(
+      title: 'Row Пример',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.black87,
+          centerTitle: true,
+          toolbarHeight: 50,
+          title: Text('___Row___'),
+
+          leading: IconButton(onPressed: ()=>debugPrint('Вы вошли в меню'), icon: Icon(Icons.menu)),
+          actions: [IconButton(onPressed: ()=>debugPrint('Вы вошли в поиск'), icon: Icon(Icons.search))],
+         // iconTheme: IconThemeData(color: Colors.black87, size: 30),
+        ),
+        body:Container(child:  Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              child: Icon(
+                  Icons.scale,size: 50,),
+              color: Colors.yellow,),
+            SizedBox(width: 20),
+            Container(child: Icon(
+                Icons.scale,size: 50,),
+              color: Colors.green,),
+            SizedBox(width: 20),
+
+            Container(child: Icon(
+                Icons.scale,size: 50,),
+              color: Colors.blue,),
+            SizedBox(width: 20),
+            Container(child: Icon(
+                Icons.scale,size: 50,),
+              color: Colors.red,),
+            SizedBox(width: 20),
+          ],
+        ),
+          alignment: Alignment.center,
+        ),
+      ),
+
+    );
+  }
+}
 
 
 
