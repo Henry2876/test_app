@@ -128,65 +128,65 @@
 
 
 
-
-import 'package:flutter/material.dart';
-
-void main() =>runApp(MyApp());
-
-
-class MyApp extends StatelessWidget{
-  const MyApp({Key? key}) : super (key : key);
-
-  @override
-  Widget build(BuildContext context) {
-
-    return MaterialApp(
-      title: 'Row Пример',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.black87,
-          centerTitle: true,
-          toolbarHeight: 50,
-          title: Text('___Row___'),
-
-          leading: IconButton(onPressed: ()=>debugPrint('Вы вошли в меню'), icon: Icon(Icons.menu)),
-          actions: [IconButton(onPressed: ()=>debugPrint('Вы вошли в поиск'), icon: Icon(Icons.search))],
-         // iconTheme: IconThemeData(color: Colors.black87, size: 30),
-        ),
-        body:Container(child:  Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              child: Icon(
-                  Icons.scale,size: 50,),
-              color: Colors.yellow,),
-            SizedBox(width: 20),
-            Container(child: Icon(
-                Icons.scale,size: 50,),
-              color: Colors.green,),
-            SizedBox(width: 20),
-
-            Container(child: Icon(
-                Icons.scale,size: 50,),
-              color: Colors.blue,),
-            SizedBox(width: 20),
-            Container(child: Icon(
-                Icons.scale,size: 50,),
-              color: Colors.red,),
-            SizedBox(width: 20),
-          ],
-        ),
-          alignment: Alignment.center,
-        ),
-      ),
-
-    );
-  }
-}
+//
+// import 'package:flutter/material.dart';
+//
+// void main() =>runApp(MyApp());
+//
+//
+// class MyApp extends StatelessWidget{
+//   const MyApp({Key? key}) : super (key : key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//
+//     return MaterialApp(
+//       title: 'Row Пример',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData.dark(),
+//       home: Scaffold(
+//         appBar: AppBar(
+//           backgroundColor: Colors.blue,
+//           foregroundColor: Colors.black87,
+//           centerTitle: true,
+//           toolbarHeight: 50,
+//           title: Text('___Row___'),
+//
+//           leading: IconButton(onPressed: ()=>debugPrint('Вы вошли в меню'), icon: Icon(Icons.menu)),
+//           actions: [IconButton(onPressed: ()=>debugPrint('Вы вошли в поиск'), icon: Icon(Icons.search))],
+//          // iconTheme: IconThemeData(color: Colors.black87, size: 30),
+//         ),
+//         body:Container(child:  Row(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           crossAxisAlignment: CrossAxisAlignment.center,
+//           children: [
+//             Container(
+//               child: Icon(
+//                   Icons.scale,size: 50,),
+//               color: Colors.yellow,),
+//             SizedBox(width: 20),
+//             Container(child: Icon(
+//                 Icons.scale,size: 50,),
+//               color: Colors.green,),
+//             SizedBox(width: 20),
+//
+//             Container(child: Icon(
+//                 Icons.scale,size: 50,),
+//               color: Colors.blue,),
+//             SizedBox(width: 20),
+//             Container(child: Icon(
+//                 Icons.scale,size: 50,),
+//               color: Colors.red,),
+//             SizedBox(width: 20),
+//           ],
+//         ),
+//           alignment: Alignment.center,
+//         ),
+//       ),
+//
+//     );
+//   }
+// }
 
 
 
@@ -198,120 +198,120 @@ class MyApp extends StatelessWidget{
 
 
 
-// import 'dart:math'; // Для вычисления диагонали экрана.
-// import 'package:flutter/material.dart'; // Основной пакет Flutter для UI.
-//
-// void main() {
-//   runApp(const MyApp()); // Запуск приложения.
-// }
-//
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     // Оборачиваем всё приложение в MaterialApp.
-//     return MaterialApp(
-//       title: 'Пример приложения', // Название приложения.
-//       debugShowCheckedModeBanner: false, // Убираем баннер "debug".
-//       theme: ThemeData.dark(), // Тема приложения.
-//       home: const ScrollViewExample(), // Задаем главный экран.
-//     );
-//   }
-// }
-//
-// class ScrollViewExample extends StatelessWidget {
-//   const ScrollViewExample({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     // Получаем размеры экрана.
-//     final screenSize = MediaQuery.of(context).size;
-//     final diagonal = sqrt(pow(screenSize.width, 2) + pow(screenSize.height, 2));
-//
-//     // Проверяем, является ли экран маленьким.
-//     final isSmallScreen = diagonal < 5.5 * 160;
-//
-//     return Scaffold(
-//       appBar: AppBar(
-//         toolbarHeight: 50,
-//         backgroundColor: Colors.black,
-//         title: const Text(
-//           "___ScrollView___",
-//           style: TextStyle(
-//             color: Colors.yellow,
-//             fontSize: 30,
-//             fontWeight: FontWeight.bold,
-//           ),
-//         ),
-//         centerTitle: true,
-//         leading: IconButton(
-//           onPressed: () => debugPrint('Меню открыто'),
-//           icon: const Icon(Icons.menu),
-//         ),
-//         actions: [
-//           IconButton(
-//             onPressed: () => debugPrint("Поиск активирован"),
-//             icon: const Icon(Icons.search),
-//           ),
-//         ],
-//         iconTheme: const IconThemeData(color: Colors.yellow, size: 30),
-//       ),
-//
-//       // Прокручиваемый контент
-//       body: SingleChildScrollView(
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.stretch,
-//           children: [
-//             // Генерация текста (контента)
-//             for (int i = 1; i <= 50; i++)
-//               Center(
-//                 child: Text(
-//                   "Контент $i",
-//                   style: const TextStyle(fontSize: 18),
-//                 ),
-//               ),
-//             // Кнопка внизу контента
-//             isSmallScreen ? Padding(
-//               padding: EdgeInsets.only(
-//                 top: 20, // Отступ сверху.
-//                 bottom: isSmallScreen ? 20 : 0, // Для маленьких экранов.
-//               ),
-//               child: ElevatedButton(
-//                 onPressed: () => debugPrint('Кнопка нажата!'),
-//                 onLongPress: () => debugPrint("Долгое нажатие на кнопку"),
-//                 style: ElevatedButton.styleFrom(
-//                   foregroundColor: Colors.yellow,
-//                   backgroundColor: Colors.black,
-//                 ),
-//                 child: const Icon(
-//                     Icons.ads_click),
-//
-//
-//
-//               ),
-//             ):Scaffold(
-//               floatingActionButton: FloatingActionButton(
-//
-//                   onPressed: (){
-//                     debugPrint('Кнопка нажата');
-//                   },
-//                 child: Icon(Icons.ads_click),
-//                 foregroundColor: Colors.yellow,
-//                 backgroundColor: Colors.black,
-//
-//               ),
-//             ),
-//
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-//
-//
-//
+import 'dart:math'; // Для вычисления диагонали экрана.
+import 'package:flutter/material.dart'; // Основной пакет Flutter для UI.
+
+void main() {
+  runApp(const MyApp()); // Запуск приложения.
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Оборачиваем всё приложение в MaterialApp.
+    return MaterialApp(
+      title: 'Пример приложения', // Название приложения.
+      debugShowCheckedModeBanner: false, // Убираем баннер "debug".
+      theme: ThemeData.dark(), // Тема приложения.
+      home: const ScrollViewExample(), // Задаем главный экран.
+    );
+  }
+}
+
+class ScrollViewExample extends StatelessWidget {
+  const ScrollViewExample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Получаем размеры экрана.
+    final screenSize = MediaQuery.of(context).size;
+    final diagonal = sqrt(pow(screenSize.width, 2) + pow(screenSize.height, 2));
+
+    // Проверяем, является ли экран маленьким.
+    final isSmallScreen = diagonal < 5.5 * 160;
+
+    return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 50,
+        backgroundColor: Colors.black,
+        title: const Text(
+          "___ScrollView___",
+          style: TextStyle(
+            color: Colors.yellow,
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () => debugPrint('Меню открыто'),
+          icon: const Icon(Icons.menu),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () => debugPrint("Поиск активирован"),
+            icon: const Icon(Icons.search),
+          ),
+        ],
+        iconTheme: const IconThemeData(color: Colors.yellow, size: 30),
+      ),
+
+      // Прокручиваемый контент
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Генерация текста (контента)
+            for (int i = 1; i <= 50; i++)
+              Center(
+                child: Text(
+                  "Контент $i",
+                  style: const TextStyle(fontSize: 18),
+                ),
+              ),
+            // Кнопка внизу контента
+            isSmallScreen ? Padding(
+              padding: EdgeInsets.only(
+                top: 20, // Отступ сверху.
+                bottom: isSmallScreen ? 20 : 0, // Для маленьких экранов.
+              ),
+              child: ElevatedButton(
+                onPressed: () => debugPrint('Кнопка нажата!'),
+                onLongPress: () => debugPrint("Долгое нажатие на кнопку"),
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.yellow,
+                  backgroundColor: Colors.black,
+                ),
+                child: const Icon(
+                    Icons.ads_click),
+
+
+
+              ),
+            ):Scaffold(
+              floatingActionButton: FloatingActionButton(
+
+                  onPressed: (){
+                    debugPrint('Кнопка нажата');
+                  },
+                child: Icon(Icons.ads_click),
+                foregroundColor: Colors.yellow,
+                backgroundColor: Colors.black,
+
+              ),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
 
 
 
