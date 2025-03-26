@@ -1,7 +1,10 @@
-//Задача № 4
+// Задание №5
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp (const MyApp());
+
 
 class MyApp extends StatelessWidget{
   const MyApp({super.key});
@@ -9,196 +12,355 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      title: "Glide",
-      debugShowCheckedModeBanner: false,
+      title: "Three Button",
       theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('_____Glide____'),
-          titleTextStyle: const TextStyle(color: Colors.green, fontSize: 35),
-          centerTitle: true,
+          appBar: AppBar(
+            title:const Text('___Button___'),
+            centerTitle: true,
+            titleTextStyle:const TextStyle(fontSize: 30,color:  Colors.blue),
+          ),
 
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.green,
+          body:Column(children: [
 
-          leading: Tooltip(message: 'Search',
-              child: IconButton(onPressed: ()=>debugPrint("Menu"), icon:const Icon(Icons.menu))),
-          actions: [Tooltip(message: 'Search',
-              child: IconButton(onPressed: ()=> debugPrint('Search'), icon:const Icon(Icons.search)))],
-        ),
-        body: Center(
-            child: SingleChildScrollView(
-              child: Column(
-                  children:[
+            Container (
+                margin:const EdgeInsets.all(16),
+                height: 50,
+                width: 400,
 
-                    Container(       // #1
-                      width: 150,
-                      height: 150,
-                      child: Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png'),
-                    ),
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white.withOpacity(0.08),
+                        offset:const Offset(0, 4),
+                      )
+                    ]
+                ),
 
+                child: ElevatedButton(
+                  onPressed:() {
+                    debugPrint('Go!');
+                  },
+                  style: ElevatedButton.styleFrom(
+                      padding:const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.green,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)
+                      )
+                  ),
+                  child:const Text('Go!'),
+                )
+            ),
 
-                    const SizedBox(height: 20),
+            Row(children: [
+              Container (
+                  margin:const EdgeInsets.only(left: 16,right: 8),
+                  height: 50,
+                  width: 180,
 
-                    Container(         //#2
-                      width: 150,
-                      height: 150,
-                      color: const Color(0xFF1C3072),
-                      child: Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                        fit: BoxFit.cover,),
-                    ),
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.08),
+                          offset:const Offset(0, 4),
+                        )
+                      ]
+                  ),
 
-                    const SizedBox(height: 20),
-
-                    Container(               //#3
-                      width: 150,
-                      height: 150,
-                      color:const Color(0xFF1C3072),
-                      child: Image.network('https://www.nicepng.com/png.png',
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) => Container(
-                          color: Colors.red,
-                          child: const Icon(Icons.error, color: Colors.white,size: 80,),
-                        ),),
-                    ),
-
-                    const SizedBox(height: 20),
-
-                    Container(                  //#4
-                      width: 150,
-                      height: 150,
-                      color:const Color(0xFF1C3072),
-                      child: Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                          fit: BoxFit.cover),
-                    ),
-
-                    const SizedBox(height: 20),
-
-                    Container(                //#5
-                      width: 150,
-                      height: 150,
-                      color:const Color(0xFF1C3072),
-                      child:
-                      Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                        loadingBuilder: (context, child, progress){
-                          return progress == null
-                              ? child
-                              : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                            height: 150,
-                            width: 150,);
-                        },
-                        errorBuilder: (context, error, stackTrace)=> Container(
-                          color: Colors.red,
-                          child: const Icon(Icons.error, color: Colors.white,size: 80),
-                        ),
-                      ),
-                    ),
-
-
-                    const SizedBox(height: 20),
-
-                    Container(              //#6
-                      width: 150,
-                      height: 150,
-                      color:const Color(0xFF1C3072),
-                      child:
-                      Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                        loadingBuilder: (context, child, progress){
-                          return progress == null
-                              ? child
-                              : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                              height: 37.5,
-                              width: 37.5);
-                        },
-                        errorBuilder: (context, error, stackTrace)=> Container(
-                          color: Colors.red,
-                          child: const Icon(Icons.error, color: Colors.white,size: 80),
-                        ),
-                      ),
-                    ),
-
-                    const SizedBox(height: 20),
-
-                    Container(
-
-                      width: 150,
-                      height: 150,
-                      color: const Color(0xFF1C3072),
-                      child: Stack(
-
-                        alignment: Alignment.center,
-                        children: [
-                          Image.network('https://w.wallhaven.cc/fu8ll/0q/wallhaven-0qv23r.jpg',
-                            fit:BoxFit.cover,
-                            loadingBuilder: (context, child, progress) {
-                              if (progress == null) return child;
-                              return const CircularProgressIndicator();
-                            },
-                            errorBuilder: (context, error, stackTrace)=> Container(
-                              color: Colors.red,
-                              child:const Center(child:  Icon(Icons.error, color: Colors.white, size: 80),
-                              )
-                            )
-                          )
-                        ]
-                      ),
-                    ),
-
-                    const SizedBox(height: 20),
-
-                    Container(
-                      width: 150,
-                      height: 150,
-                      color:const Color(0xFF1C3072),
-                      child:
-                      Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                      loadingBuilder: (context, child, progress){
-                        return progress == null
-                            ? child
-                            : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                        height: 37.5,
-                        width: 37.5,);
+                  child: ElevatedButton(
+                      onPressed:() {
+                        debugPrint('Stop the violence!');
                       },
-                        errorBuilder: (context, error, stackTrace)=>Container(
-                          color: Colors.red,
-                          child: const Icon(Icons.error, size: 80,color: Colors.white),
-                        ),
+                      style: ElevatedButton.styleFrom(
+                          padding:const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.red,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)
+                          )
                       ),
-                    ),
+                      child:const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.back_hand_outlined,color: Colors.white,),
+                            SizedBox(width: 10),
+                            Text(
+                                'Stop the violence',
+                                textAlign: TextAlign.center,
+                                maxLines: 2,
+                                style: TextStyle(color: Colors.white))
+                          ]
+                      )
 
-                    const SizedBox(height: 20),
-
-                    Container(
-                      width: 150,
-                      height: 150,
-                      color:const Color(0xFF1C3072),
-                      child:
-                      Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                      loadingBuilder: (context, child, progress){
-                        return progress == null
-                            ? child
-                            : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
-                        height: 37.5,
-                            width: 37.5);
-                        },
-                        errorBuilder: (context, error, stackTrace)=>Container(
-                          color: Colors.red,
-                          child: const Icon(Icons.error, color: Colors.white,size: 80),
-                        ),
-                      ),
-                    )
-
-                  ]
+                  )
               ),
+
+
+              Container (
+                  margin:const EdgeInsets.only(right: 16, left: 8),
+                  height: 50,
+                  width: 180,
+
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withOpacity(0.08),
+                          offset:const Offset(0, 4),
+                        )
+                      ]
+                  ),
+
+                  child: ElevatedButton(
+                      onPressed:() {
+                        debugPrint('Edit!');
+                      },
+                      style: ElevatedButton.styleFrom(
+                          padding:const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.lightBlueAccent,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)
+                          )
+                      ),
+                      child:const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(CupertinoIcons.plus,color: Colors.white,),
+                            SizedBox(width: 10),
+                            Text('Edit'),
+                            SizedBox(width: 10),
+                            Icon(CupertinoIcons.minus,color: Colors.white,)]
+                      )
+
+                  )
+              ),
+
+            ],
             )
-        ),
+          ]
+          )
       ),
     );
+
+
   }
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+// //Задача № 4
+// import 'package:flutter/material.dart';
+//
+// void main() => runApp (const MyApp());
+//
+// class MyApp extends StatelessWidget{
+//   const MyApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context){
+//     return MaterialApp(
+//       title: "Glide",
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData.dark(),
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('_____Glide____'),
+//           titleTextStyle: const TextStyle(color: Colors.green, fontSize: 35),
+//           centerTitle: true,
+//
+//           backgroundColor: Colors.black,
+//           foregroundColor: Colors.green,
+//
+//           leading: Tooltip(message: 'Search',
+//               child: IconButton(onPressed: ()=>debugPrint("Menu"), icon:const Icon(Icons.menu))),
+//           actions: [Tooltip(message: 'Search',
+//               child: IconButton(onPressed: ()=> debugPrint('Search'), icon:const Icon(Icons.search)))],
+//         ),
+//         body: Center(
+//             child: SingleChildScrollView(
+//               child: Column(
+//                   children:[
+//
+//                     Container(       // #1
+//                       width: 150,
+//                       height: 150,
+//                       child: Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png'),
+//                     ),
+//
+//
+//                     const SizedBox(height: 20),
+//
+//                     Container(         //#2
+//                       width: 150,
+//                       height: 150,
+//                       color: const Color(0xFF1C3072),
+//                       child: Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                         fit: BoxFit.cover,),
+//                     ),
+//
+//                     const SizedBox(height: 20),
+//
+//                     Container(               //#3
+//                       width: 150,
+//                       height: 150,
+//                       color:const Color(0xFF1C3072),
+//                       child: Image.network('https://www.nicepng.com/png.png',
+//                         fit: BoxFit.contain,
+//                         errorBuilder: (context, error, stackTrace) => Container(
+//                           color: Colors.red,
+//                           child: const Icon(Icons.error, color: Colors.white,size: 80,),
+//                         ),),
+//                     ),
+//
+//                     const SizedBox(height: 20),
+//
+//                     Container(                  //#4
+//                       width: 150,
+//                       height: 150,
+//                       color:const Color(0xFF1C3072),
+//                       child: Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                           fit: BoxFit.cover),
+//                     ),
+//
+//                     const SizedBox(height: 20),
+//
+//                     Container(                //#5
+//                       width: 150,
+//                       height: 150,
+//                       color:const Color(0xFF1C3072),
+//                       child:
+//                       Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                         loadingBuilder: (context, child, progress){
+//                           return progress == null
+//                               ? child
+//                               : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                             height: 150,
+//                             width: 150,);
+//                         },
+//                         errorBuilder: (context, error, stackTrace)=> Container(
+//                           color: Colors.red,
+//                           child: const Icon(Icons.error, color: Colors.white,size: 80),
+//                         ),
+//                       ),
+//                     ),
+//
+//
+//                     const SizedBox(height: 20),
+//
+//                     Container(              //#6
+//                       width: 150,
+//                       height: 150,
+//                       color:const Color(0xFF1C3072),
+//                       child:
+//                       Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                         loadingBuilder: (context, child, progress){
+//                           return progress == null
+//                               ? child
+//                               : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                               height: 37.5,
+//                               width: 37.5);
+//                         },
+//                         errorBuilder: (context, error, stackTrace)=> Container(
+//                           color: Colors.red,
+//                           child: const Icon(Icons.error, color: Colors.white,size: 80),
+//                         ),
+//                       ),
+//                     ),
+//
+//                     const SizedBox(height: 20),
+//
+//                     Container(
+//
+//                       width: 150,
+//                       height: 150,
+//                       color: const Color(0xFF1C3072),
+//                       child: Stack(
+//
+//                         alignment: Alignment.center,
+//                         children: [
+//                           Image.network('https://w.wallhaven.cc/fu8ll/0q/wallhaven-0qv23r.jpg',
+//                             fit:BoxFit.cover,
+//                             loadingBuilder: (context, child, progress) {
+//                               if (progress == null) return child;
+//                               return const CircularProgressIndicator();
+//                             },
+//                             errorBuilder: (context, error, stackTrace)=> Container(
+//                               color: Colors.red,
+//                               child:const Center(child:  Icon(Icons.error, color: Colors.white, size: 80),
+//                               )
+//                             )
+//                           )
+//                         ]
+//                       ),
+//                     ),
+//
+//                     const SizedBox(height: 20),
+//
+//                     Container(
+//                       width: 150,
+//                       height: 150,
+//                       color:const Color(0xFF1C3072),
+//                       child:
+//                       Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                       loadingBuilder: (context, child, progress){
+//                         return progress == null
+//                             ? child
+//                             : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                         height: 37.5,
+//                         width: 37.5,);
+//                       },
+//                         errorBuilder: (context, error, stackTrace)=>Container(
+//                           color: Colors.red,
+//                           child: const Icon(Icons.error, size: 80,color: Colors.white),
+//                         ),
+//                       ),
+//                     ),
+//
+//                     const SizedBox(height: 20),
+//
+//                     Container(
+//                       width: 150,
+//                       height: 150,
+//                       color:const Color(0xFF1C3072),
+//                       child:
+//                       Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                       loadingBuilder: (context, child, progress){
+//                         return progress == null
+//                             ? child
+//                             : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+//                         height: 37.5,
+//                             width: 37.5);
+//                         },
+//                         errorBuilder: (context, error, stackTrace)=>Container(
+//                           color: Colors.red,
+//                           child: const Icon(Icons.error, color: Colors.white,size: 80),
+//                         ),
+//                       ),
+//                     )
+//
+//                   ]
+//               ),
+//             )
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+//
+//
 
 
 
