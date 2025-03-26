@@ -1,3 +1,221 @@
+//Задача № 4
+import 'package:flutter/material.dart';
+
+void main() => runApp (const MyApp());
+
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      title: "Glide",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('_____Glide____'),
+          titleTextStyle: const TextStyle(color: Colors.green, fontSize: 35),
+          centerTitle: true,
+
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.green,
+
+          leading: Tooltip(message: 'Search',
+              child: IconButton(onPressed: ()=>debugPrint("Menu"), icon:const Icon(Icons.menu))),
+          actions: [Tooltip(message: 'Search',
+              child: IconButton(onPressed: ()=> debugPrint('Search'), icon:const Icon(Icons.search)))],
+        ),
+        body: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                  children:[
+
+                    Container(       // #1
+                      width: 150,
+                      height: 150,
+                      child: Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png'),
+                    ),
+
+
+                    const SizedBox(height: 20),
+
+                    Container(         //#2
+                      width: 150,
+                      height: 150,
+                      color: const Color(0xFF1C3072),
+                      child: Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                        fit: BoxFit.cover,),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    Container(               //#3
+                      width: 150,
+                      height: 150,
+                      color:const Color(0xFF1C3072),
+                      child: Image.network('https://www.nicepng.com/png.png',
+                        fit: BoxFit.contain,
+                        errorBuilder: (context, error, stackTrace) => Container(
+                          color: Colors.red,
+                          child: const Icon(Icons.error, color: Colors.white,size: 80,),
+                        ),),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    Container(                  //#4
+                      width: 150,
+                      height: 150,
+                      color:const Color(0xFF1C3072),
+                      child: Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                          fit: BoxFit.cover),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    Container(                //#5
+                      width: 150,
+                      height: 150,
+                      color:const Color(0xFF1C3072),
+                      child:
+                      Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                        loadingBuilder: (context, child, progress){
+                          return progress == null
+                              ? child
+                              : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                            height: 150,
+                            width: 150,);
+                        },
+                        errorBuilder: (context, error, stackTrace)=> Container(
+                          color: Colors.red,
+                          child: const Icon(Icons.error, color: Colors.white,size: 80),
+                        ),
+                      ),
+                    ),
+
+
+                    const SizedBox(height: 20),
+
+                    Container(              //#6
+                      width: 150,
+                      height: 150,
+                      color:const Color(0xFF1C3072),
+                      child:
+                      Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                        loadingBuilder: (context, child, progress){
+                          return progress == null
+                              ? child
+                              : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                              height: 37.5,
+                              width: 37.5);
+                        },
+                        errorBuilder: (context, error, stackTrace)=> Container(
+                          color: Colors.red,
+                          child: const Icon(Icons.error, color: Colors.white,size: 80),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    Container(
+
+                      width: 150,
+                      height: 150,
+                      color: const Color(0xFF1C3072),
+                      child: Stack(
+
+                        alignment: Alignment.center,
+                        children: [
+                          Image.network('https://w.wallhaven.cc/fu8ll/0q/wallhaven-0qv23r.jpg',
+                            fit:BoxFit.cover,
+                            loadingBuilder: (context, child, progress) {
+                              if (progress == null) return child;
+                              return const CircularProgressIndicator();
+                            },
+                            errorBuilder: (context, error, stackTrace)=> Container(
+                              color: Colors.red,
+                              child:const Center(child:  Icon(Icons.error, color: Colors.white, size: 80),
+                              )
+                            )
+                          )
+                        ]
+                      ),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    Container(
+                      width: 150,
+                      height: 150,
+                      color:const Color(0xFF1C3072),
+                      child:
+                      Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                      loadingBuilder: (context, child, progress){
+                        return progress == null
+                            ? child
+                            : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                        height: 37.5,
+                        width: 37.5,);
+                      },
+                        errorBuilder: (context, error, stackTrace)=>Container(
+                          color: Colors.red,
+                          child: const Icon(Icons.error, size: 80,color: Colors.white),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    Container(
+                      width: 150,
+                      height: 150,
+                      color:const Color(0xFF1C3072),
+                      child:
+                      Image.network('https://www.nicepng.com/png/detail/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                      loadingBuilder: (context, child, progress){
+                        return progress == null
+                            ? child
+                            : Image.network('https://simg.nicepng.com/png/small/171-1717669_heroes-3-blackdragon-heroes-of-might-and-magic.png',
+                        height: 37.5,
+                            width: 37.5);
+                        },
+                        errorBuilder: (context, error, stackTrace)=>Container(
+                          color: Colors.red,
+                          child: const Icon(Icons.error, color: Colors.white,size: 80),
+                        ),
+                      ),
+                    )
+
+                  ]
+              ),
+            )
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //----------------ЗАДАНИЕ 1.3----------------------
 
 // import 'package:flutter/material.dart';
@@ -192,128 +410,128 @@
 
 
 //-------------------ЗАДАНИЕ 1.1------------------------------------
-
-
-
-
-
-
-import 'dart:math'; // Для вычисления диагонали экрана.
-import 'package:flutter/material.dart'; // Основной пакет Flutter для UI.
-
-void main() {
-  runApp(const MyApp()); // Запуск приложения.
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // Оборачиваем всё приложение в MaterialApp.
-    return MaterialApp(
-      title: 'Пример приложения', // Название приложения.
-      debugShowCheckedModeBanner: false, // Убираем баннер "debug".
-      theme: ThemeData.dark(), // Тема приложения.
-      home: const ScrollViewExample(), // Задаем главный экран.
-    );
-  }
-}
-
-class ScrollViewExample extends StatelessWidget {
-  const ScrollViewExample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // Получаем размеры экрана.
-    final screenSize = MediaQuery.of(context).size;
-    final diagonal = sqrt(pow(screenSize.width, 2) + pow(screenSize.height, 2));
-
-    // Проверяем, является ли экран маленьким.
-    final isSmallScreen = diagonal < 5.5 * 160;
-
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 50,
-        backgroundColor: Colors.black,
-        title: const Text(
-          "___ScrollView___",
-          style: TextStyle(
-            color: Colors.yellow,
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () => debugPrint('Меню открыто'),
-          icon: const Icon(Icons.menu),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () => debugPrint("Поиск активирован"),
-            icon: const Icon(Icons.search),
-          ),
-        ],
-        iconTheme: const IconThemeData(color: Colors.yellow, size: 30),
-      ),
-
-      // Прокручиваемый контент
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Генерация текста (контента)
-            for (int i = 1; i <= 50; i++)
-              Center(
-                child: Text(
-                  "Контент $i",
-                  style: const TextStyle(fontSize: 18),
-                ),
-              ),
-            // Кнопка внизу контента
-            isSmallScreen ? Padding(
-              padding: EdgeInsets.only(
-                top: 20, // Отступ сверху.
-                bottom: isSmallScreen ? 20 : 0, // Для маленьких экранов.
-              ),
-              child: ElevatedButton(
-                onPressed: () => debugPrint('Кнопка нажата!'),
-                onLongPress: () => debugPrint("Долгое нажатие на кнопку"),
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.yellow,
-                  backgroundColor: Colors.black,
-                ),
-                child: const Icon(
-                    Icons.ads_click),
-
-
-
-              ),
-            ):Scaffold(
-              floatingActionButton: FloatingActionButton(
-
-                  onPressed: (){
-                    debugPrint('Кнопка нажата');
-                  },
-                foregroundColor: Colors.yellow,
-                backgroundColor: Colors.black,
-                child: const Icon(Icons.ads_click),
-
-              ),
-            ),
-
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+// import 'dart:math'; // Для вычисления диагонали экрана.
+// import 'package:flutter/material.dart'; // Основной пакет Flutter для UI.
+//
+// void main() {
+//   runApp(const MyApp()); // Запуск приложения.
+// }
+//
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     // Оборачиваем всё приложение в MaterialApp.
+//     return MaterialApp(
+//       title: 'Пример приложения', // Название приложения.
+//       debugShowCheckedModeBanner: false, // Убираем баннер "debug".
+//       theme: ThemeData.dark(), // Тема приложения.
+//       home: const ScrollViewExample(), // Задаем главный экран.
+//     );
+//   }
+// }
+//
+// class ScrollViewExample extends StatelessWidget {
+//   const ScrollViewExample({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     // Получаем размеры экрана.
+//     final screenSize = MediaQuery.of(context).size;
+//     final diagonal = sqrt(pow(screenSize.width, 2) + pow(screenSize.height, 2));
+//
+//     // Проверяем, является ли экран маленьким.
+//     final isSmallScreen = diagonal < 5.5 * 160;
+//
+//     return Scaffold(
+//       appBar: AppBar(
+//         toolbarHeight: 50,
+//         backgroundColor: Colors.black,
+//         title: const Text(
+//           "___ScrollView___",
+//           style: TextStyle(
+//             color: Colors.yellow,
+//             fontSize: 30,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//         centerTitle: true,
+//         leading: IconButton(
+//           onPressed: () => debugPrint('Меню открыто'),
+//           icon: const Icon(Icons.menu),
+//         ),
+//         actions: [
+//           IconButton(
+//             onPressed: () => debugPrint("Поиск активирован"),
+//             icon: const Icon(Icons.search),
+//           ),
+//         ],
+//         iconTheme: const IconThemeData(color: Colors.yellow, size: 30),
+//       ),
+//
+//       // Прокручиваемый контент
+//       body: SingleChildScrollView(
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.stretch,
+//           children: [
+//             // Генерация текста (контента)
+//             for (int i = 1; i <= 50; i++)
+//               Center(
+//                 child: Text(
+//                   "Контент $i",
+//                   style: const TextStyle(fontSize: 18),
+//                 ),
+//               ),
+//             // Кнопка внизу контента
+//             isSmallScreen ? Padding(
+//               padding: EdgeInsets.only(
+//                 top: 20, // Отступ сверху.
+//                 bottom: isSmallScreen ? 20 : 0, // Для маленьких экранов.
+//               ),
+//               child: ElevatedButton(
+//                 onPressed: () => debugPrint('Кнопка нажата!'),
+//                 onLongPress: () => debugPrint("Долгое нажатие на кнопку"),
+//                 style: ElevatedButton.styleFrom(
+//                   foregroundColor: Colors.yellow,
+//                   backgroundColor: Colors.black,
+//                 ),
+//                 child: const Icon(
+//                     Icons.ads_click),
+//
+//
+//
+//               ),
+//             ):Scaffold(
+//               floatingActionButton: FloatingActionButton(
+//
+//                   onPressed: (){
+//                     debugPrint('Кнопка нажата');
+//                   },
+//                 foregroundColor: Colors.yellow,
+//                 backgroundColor: Colors.black,
+//                 child: const Icon(Icons.ads_click),
+//
+//               ),
+//             ),
+//
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+//
+//
+//
+//
 
 
 
