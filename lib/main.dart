@@ -58,8 +58,6 @@ class HomeScreen extends StatelessWidget{
   }
 }
 
-
-
 class LogicScreen1 extends StatefulWidget {
   @override
   _LogicScreen1State createState() => _LogicScreen1State();
