@@ -1,0 +1,4 @@
+enum OpacityAction {
+  increment,
+  decriment,
+}

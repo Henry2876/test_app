@@ -1,23 +1,17 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:test_app/utils/translations.dart';
 import '../utils/image_urls.dart';
 import '../style/text_style.dart';
 
-class Hidden extends StatelessWidget {
-  final bool isHidden;
-
-  const Hidden({
-    required this.isHidden,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child: isHidden
-            ? Text(
-                'Hidden',
-                style: textRedBold_15,
-              )
-            : Image.network(manSurprised));
-  }
+Widget buildHiddenImageWidget({
+  required bool hiddenImage,
+}) {
+  return Center(
+    child: hiddenImage
+        ? const Text(
+            titleBodyScreenHidden,
+            style: textRedBold_15,
+          )
+        : Image.network(manSurprised),
+  );
 }

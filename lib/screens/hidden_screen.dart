@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:test_app/function/hidden_screen_fun.dart';
 import '../utils/translations.dart';
 import '../utils/sizes.dart';
-import '../widgets/hidden_button.dart';
+import '../widgets/app_button.dart';
 import '../style/button_style.dart';
 
 class HiddenScreen extends StatefulWidget {
@@ -14,43 +14,43 @@ class HiddenScreen extends StatefulWidget {
 }
 
 class HiddenScreenState extends State<HiddenScreen> {
-  bool _isHidden = false;
+  bool _hidden = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(firstScreenName),
+        title: Text(screenNames[0]),
         centerTitle: true,
       ),
-      body: Hidden(isHidden: _isHidden),
+      body: buildHiddenImageWidget(hiddenImage: _hidden),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: HiddenButton(
+              child: AppButton(
                 style: minimalismYellow,
                 onPress: () {
                   setState(() {
-                    _isHidden = true;
+                    _hidden = true;
                   });
                 },
-                title: 'Hidden',
+                title: firstNameHiddenButton,
                 icon: const Icon(CupertinoIcons.hand_point_left),
               ),
             ),
-            const SizedBox(width: 16),
+            const SizedBox(width: size_16),
             Expanded(
-              child: HiddenButton(
+              child: AppButton(
                 style: naturalTones,
                 onPress: () {
                   setState(() {
-                    _isHidden = false;
+                    _hidden = false;
                   });
                 },
-                title: 'Show',
+                title: secondNameHiddenButton,
                 icon: const Icon(CupertinoIcons.hand_point_left_fill),
               ),
             ),

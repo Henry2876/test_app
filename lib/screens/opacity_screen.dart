@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/style/button_style.dart';
-import 'package:test_app/widgets/opacity_button.dart';
+import 'package:test_app/widgets/app_button.dart';
 import '../function/opacity_screen_fun.dart';
+import '../utils/enum_files.dart';
 import '../utils/translations.dart';
 import '../utils/sizes.dart';
 
@@ -20,17 +21,17 @@ class OpacityScreenState extends State<OpacityScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(thirdScreenName),
+        title: Text(screenNames[1]),
         centerTitle: true,
       ),
-      body: OpacityFun(isOpacity: _opacity),
+      body: buildOpacityImageWidget(opacityValue: _opacity),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: OpacityButton(
+              child: AppButton(
                 style: minimalismBlueLight,
                 onPress: () {
                   setState(() {
@@ -39,13 +40,13 @@ class OpacityScreenState extends State<OpacityScreen> {
                         correctOpacity: _opacity);
                   });
                 },
-                title: 'Increase',
+                title: firstNameOpacityButton,
                 icon: const Icon(CupertinoIcons.lightbulb),
               ),
             ),
             const SizedBox(width: size_16),
             Expanded(
-              child: OpacityButton(
+              child: AppButton(
                 style: minimalismBlueSaturated,
                 onPress: () {
                   setState(() {
@@ -54,7 +55,7 @@ class OpacityScreenState extends State<OpacityScreen> {
                         correctOpacity: _opacity);
                   });
                 },
-                title: 'Decrease',
+                title: secondNameOpacityButton,
                 icon: const Icon(CupertinoIcons.lightbulb_fill),
               ),
             ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/utils/sizes.dart';
 
-// синий, оранжевый, белый, зеленый, желтый, черный
 final ButtonStyle contrasTones = ElevatedButton.styleFrom(
   backgroundColor: const Color(0xEA002D95),
   foregroundColor: Colors.orange,
@@ -10,7 +9,6 @@ final ButtonStyle contrasTones = ElevatedButton.styleFrom(
   textStyle: const TextStyle(
       color: Colors.orange, fontSize: size_14, fontWeight: FontWeight.w400),
 );
-// оливковый, коричнивый, кремовый, терракотовый, белый, бежевый
 final ButtonStyle naturalTones = ElevatedButton.styleFrom(
   backgroundColor: const Color(0xEAA4BF50),
   foregroundColor: const Color(0xEAF1C790),
@@ -19,7 +17,6 @@ final ButtonStyle naturalTones = ElevatedButton.styleFrom(
   textStyle: const TextStyle(
       color: Color(0xEAF1C790), fontSize: size_14, fontWeight: FontWeight.w400),
 );
-// белый, черный, серый
 final ButtonStyle minimalismBlack = ElevatedButton.styleFrom(
   backgroundColor: const Color(0xFF000000),
   foregroundColor: const Color(0xEAB8B8B8),
@@ -28,7 +25,6 @@ final ButtonStyle minimalismBlack = ElevatedButton.styleFrom(
   textStyle: const TextStyle(
       color: Color(0xEAB8B8B8), fontSize: size_14, fontWeight: FontWeight.w400),
 );
-//мятный, лаймовый, светло-желтый - темноЗеленый, оливковый, черный
 final ButtonStyle minimalismGreen = ElevatedButton.styleFrom(
   backgroundColor: const Color(0xFF22A802),
   foregroundColor: const Color(0xFF70FABA),
@@ -37,7 +33,6 @@ final ButtonStyle minimalismGreen = ElevatedButton.styleFrom(
   textStyle: const TextStyle(
       color: Color(0xFF70FABA), fontSize: size_14, fontWeight: FontWeight.w400),
 );
-// розовый, светлоЖелтый, кремовый - темноКоричневый, черный, серебряный
 final ButtonStyle minimalismRed = ElevatedButton.styleFrom(
   backgroundColor: const Color(0xFFD10202),
   foregroundColor: const Color(0xEAF6B892),
@@ -46,7 +41,6 @@ final ButtonStyle minimalismRed = ElevatedButton.styleFrom(
   textStyle: const TextStyle(
       color: Color(0xEAF6B892), fontSize: size_14, fontWeight: FontWeight.w400),
 );
-//бежевый, белый, светлоРозовый - коричневый, темно-синий, черный
 final ButtonStyle minimalismYellow = ElevatedButton.styleFrom(
   backgroundColor: const Color(0xFFF0FF00),
   foregroundColor: const Color(0xEA914F0E),
@@ -55,7 +49,6 @@ final ButtonStyle minimalismYellow = ElevatedButton.styleFrom(
   textStyle: const TextStyle(
       color: Color(0xEA914F0E), fontSize: size_14, fontWeight: FontWeight.w400),
 );
-//Светлый сини+ желтый
 final ButtonStyle minimalismBlueLight = ElevatedButton.styleFrom(
   backgroundColor: const Color(0x5F0036FF),
   foregroundColor: const Color(0x4AF7FF00),
@@ -64,7 +57,6 @@ final ButtonStyle minimalismBlueLight = ElevatedButton.styleFrom(
   textStyle: const TextStyle(
       color: Color(0x4AF7FF00), fontSize: size_14, fontWeight: FontWeight.w400),
 );
-//Яркий сини+ желтый
 final ButtonStyle minimalismBlueSaturated = ElevatedButton.styleFrom(
   backgroundColor: const Color(0xFF0036FF),
   foregroundColor: const Color(0xFFF7FF00),
