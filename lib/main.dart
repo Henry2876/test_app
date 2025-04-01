@@ -1,79 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/screens/home_screen.dart';
+import 'package:test_app/screens/hidden_screen.dart';
+import 'package:test_app/screens/presence_screen.dart';
+import 'package:test_app/screens/opacity_screen.dart';
+import 'package:test_app/screens/end_screen.dart';
+import '../utils/translations.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // оставить только это +
+  // пройтись по всему коду проставить запятые и отформатировать
+  //вынести переводы в файлик с локализацией
+  //Разнести все по отдельным файлам (1 файл 1 скрин + отрефакторить названия) +
+  // Вынести все стили в отлельный файл
+  // ВЫНЕСТИ ОТДЕЛЬНО РАЗМЕРЫ  в класс +
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        title: Text(widget.title),
-      ),
-      body: Center(
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      title: addTitle,
+      home: const HomeScreen(),
+      routes: {
+        '/logic1': (context) => const HiddenScreen(),
+        '/logic2': (context) => const RestoreScreen(),
+        '/logic3': (context) => const OpacityScreen(),
+        '/final': (context) => const EndScreen(),
+      },
     );
   }
 }
