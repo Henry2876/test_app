@@ -13,7 +13,7 @@ class RestoreScreen extends StatefulWidget {
 }
 
 class PresenceScreenState extends State<RestoreScreen> {
-  bool _presence = false;
+  bool _isImagePresence = false;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class PresenceScreenState extends State<RestoreScreen> {
         title: Text(getScreenTitle(2)),
         centerTitle: true,
       ),
-      body: buildPresenceImageWidget(presenceImage: _presence),
+      body: buildPresenceImageWidget(presenceImage: _isImagePresence),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(
@@ -37,7 +37,7 @@ class PresenceScreenState extends State<RestoreScreen> {
                 ),
                 onPress: () {
                   setState(() {
-                    _presence = true;
+                    _isImagePresence = true;
                   });
                 },
               ),
@@ -52,7 +52,7 @@ class PresenceScreenState extends State<RestoreScreen> {
                 ),
                 onPress: () {
                   setState(() {
-                    _presence = false;
+                    _isImagePresence = false;
                   });
                 },
               ),

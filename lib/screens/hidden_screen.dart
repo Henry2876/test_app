@@ -14,7 +14,7 @@ class HiddenScreen extends StatefulWidget {
 }
 
 class HiddenScreenState extends State<HiddenScreen> {
-  bool _hidden = false;
+  bool _isImageHidden = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class HiddenScreenState extends State<HiddenScreen> {
         title: Text(getScreenTitle(1)),
         centerTitle: true,
       ),
-      body: buildHiddenImageWidget(hiddenImage: _hidden),
+      body: buildHiddenImageWidget(hiddenImage: _isImageHidden),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(
@@ -34,7 +34,7 @@ class HiddenScreenState extends State<HiddenScreen> {
                 style: minimalismYellow,
                 onPress: () {
                   setState(() {
-                    _hidden = true;
+                    _isImageHidden = true;
                   });
                 },
                 title: firstNameHiddenButton,
@@ -47,7 +47,7 @@ class HiddenScreenState extends State<HiddenScreen> {
                 style: naturalTones,
                 onPress: () {
                   setState(() {
-                    _hidden = false;
+                    _isImageHidden = false;
                   });
                 },
                 title: secondNameHiddenButton,

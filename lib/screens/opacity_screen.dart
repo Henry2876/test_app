@@ -15,7 +15,7 @@ class OpacityScreen extends StatefulWidget {
 }
 
 class OpacityScreenState extends State<OpacityScreen> {
-  double _opacity = 1.0;
+  double _isImageOpacity = 1.0;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class OpacityScreenState extends State<OpacityScreen> {
         title: Text(getScreenTitle(3)),
         centerTitle: true,
       ),
-      body: buildOpacityImageWidget(opacityValue: _opacity),
+      body: buildOpacityImageWidget(opacityValue: _isImageOpacity),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(
@@ -35,9 +35,9 @@ class OpacityScreenState extends State<OpacityScreen> {
                 style: minimalismBlueLight,
                 onPress: () {
                   setState(() {
-                    _opacity = calculateOpacity(
+                    _isImageOpacity = calculateOpacity(
                         action: OpacityAction.decriment,
-                        correctOpacity: _opacity);
+                        correctOpacity: _isImageOpacity);
                   });
                 },
                 title: firstNameOpacityButton,
@@ -50,9 +50,9 @@ class OpacityScreenState extends State<OpacityScreen> {
                 style: minimalismBlueSaturated,
                 onPress: () {
                   setState(() {
-                    _opacity = calculateOpacity(
+                    _isImageOpacity = calculateOpacity(
                         action: OpacityAction.increment,
-                        correctOpacity: _opacity);
+                        correctOpacity: _isImageOpacity);
                   });
                 },
                 title: secondNameOpacityButton,
