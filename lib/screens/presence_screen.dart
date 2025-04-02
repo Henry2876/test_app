@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/style/button_style.dart';
 import 'package:test_app/widgets/app_button.dart';
+import '../utils/image_urls.dart';
 import '../utils/translations.dart';
 import '../utils/sizes.dart';
-import '../function/presence_screen_fun.dart';
 
 class RestoreScreen extends StatefulWidget {
   const RestoreScreen({super.key});
@@ -22,7 +22,13 @@ class PresenceScreenState extends State<RestoreScreen> {
         title: Text(getScreenTitle(2)),
         centerTitle: true,
       ),
-      body: buildPresenceImageWidget(presenceImage: _isImagePresence),
+      body: Center(
+        child: _isImagePresence
+            ? Image.network(
+          manInGlassesLink,
+        )
+            : Container(),
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(

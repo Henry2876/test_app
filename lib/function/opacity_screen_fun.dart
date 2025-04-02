@@ -1,17 +1,4 @@
-import 'package:flutter/material.dart';
 import '../utils/enum_files.dart';
-import '../utils/image_urls.dart';
-
-Widget buildOpacityImageWidget({
-  required double opacityValue,
-}) {
-  return Center(
-    child: Opacity(
-      opacity: opacityValue,
-      child: Image.network(manNarrowEyes),
-    ),
-  );
-}
 
 double calculateOpacity({
   required double correctOpacity,

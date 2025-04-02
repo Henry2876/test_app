@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_app/function/hidden_screen_fun.dart';
+import '../utils/image_urls.dart';
 import '../utils/translations.dart';
 import '../utils/sizes.dart';
 import '../widgets/app_button.dart';
@@ -14,7 +14,7 @@ class HiddenScreen extends StatefulWidget {
 }
 
 class HiddenScreenState extends State<HiddenScreen> {
-  bool _isImageHidden = false;
+   bool _isImageHidden = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,13 @@ class HiddenScreenState extends State<HiddenScreen> {
         title: Text(getScreenTitle(1)),
         centerTitle: true,
       ),
-      body: buildHiddenImageWidget(hiddenImage: _isImageHidden),
+      body: Center(
+        child: _isImageHidden
+            ? Image.network(
+          manInGlassesLink,
+        )
+            : Container(),
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(

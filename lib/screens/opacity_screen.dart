@@ -4,6 +4,7 @@ import 'package:test_app/style/button_style.dart';
 import 'package:test_app/widgets/app_button.dart';
 import '../function/opacity_screen_fun.dart';
 import '../utils/enum_files.dart';
+import '../utils/image_urls.dart';
 import '../utils/translations.dart';
 import '../utils/sizes.dart';
 
@@ -24,7 +25,12 @@ class OpacityScreenState extends State<OpacityScreen> {
         title: Text(getScreenTitle(3)),
         centerTitle: true,
       ),
-      body: buildOpacityImageWidget(opacityValue: _isImageOpacity),
+      body: Center(
+        child: Opacity(
+          opacity: _isImageOpacity,
+          child: Image.network(manNarrowEyes),
+        ),
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(
