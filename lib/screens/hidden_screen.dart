@@ -20,7 +20,7 @@ class HiddenScreenState extends State<HiddenScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(screenNames[0]),
+        title: Text(getScreenTitle(1)),
         centerTitle: true,
       ),
       body: buildHiddenImageWidget(hiddenImage: _hidden),

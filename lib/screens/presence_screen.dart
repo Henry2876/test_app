@@ -19,7 +19,7 @@ class PresenceScreenState extends State<RestoreScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(screenNames[2]),
+        title: Text(getScreenTitle(2)),
         centerTitle: true,
       ),
       body: buildPresenceImageWidget(presenceImage: _presence),

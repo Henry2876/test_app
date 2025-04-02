@@ -21,7 +21,7 @@ class OpacityScreenState extends State<OpacityScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(screenNames[1]),
+        title: Text(getScreenTitle(3)),
         centerTitle: true,
       ),
       body: buildOpacityImageWidget(opacityValue: _opacity),

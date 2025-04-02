@@ -21,15 +21,15 @@ class HomeScreen extends StatelessWidget {
             children: [
               AppButton(
                   onPress: () => Navigator.pushNamed(context, routFirstScreen),
-                  title: screenNames[0]),
+                  title: getScreenTitle(1)),
               const SizedBox(height: size_5),
               AppButton(
                   onPress: () => Navigator.pushNamed(context, routSecondScreen),
-                  title: screenNames[1]),
+                  title: getScreenTitle(2)),
               const SizedBox(height: size_5),
               AppButton(
                   onPress: () => Navigator.pushNamed(context, routThirdScreen),
-                  title: screenNames[2]),
+                  title: getScreenTitle(3)),
               const SizedBox(height: size_5),
               AppButton(
                   onPress: () => Navigator.pushNamed(context, routEndScreen),

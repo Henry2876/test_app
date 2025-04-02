@@ -1,6 +1,8 @@
+const String screenTitle = 'Экран';
+
+String getScreenTitle(int number) => "$screenTitle $number";
 const String addTitle = 'Task №6';
 const String homeScreenName = 'Главный экран';
-const List<String> screenNames = ['Экран 1','Экран 2','Экран 3'];
 const String endScreenName = 'Экран Развязки';
 const String firstNameHiddenButton = 'Hidden';
 const String secondNameHiddenButton = 'Show';
