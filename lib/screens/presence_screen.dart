@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/style/button_style.dart';
-import 'package:test_app/widgets/presence_button.dart';
+import 'package:test_app/widgets/app_button.dart';
+import '../utils/image_urls.dart';
 import '../utils/translations.dart';
 import '../utils/sizes.dart';
-import '../function/presence_screen_fun.dart';
 
 class RestoreScreen extends StatefulWidget {
   const RestoreScreen({super.key});
@@ -13,46 +13,52 @@ class RestoreScreen extends StatefulWidget {
 }
 
 class PresenceScreenState extends State<RestoreScreen> {
-  bool isPresence = false;
+  bool _isImagePresence = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(secondScreenName),
+        title: Text(getScreenTitle(2)),
         centerTitle: true,
       ),
-      body: Presence(isPresence: isPresence),
+      body: Center(
+        child: _isImagePresence
+            ? Image.network(
+          manInGlassesLink,
+        )
+            : Container(),
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: PresenceButton(
+              child: AppButton(
                 style: minimalismGreen,
-                title: 'Restore',
+                title: firstNamePresenceButton,
                 icon: const Icon(
                   Icons.restore,
                 ),
                 onPress: () {
                   setState(() {
-                    isPresence = true;
+                    _isImagePresence = true;
                   });
                 },
               ),
             ),
             const SizedBox(width: size_16),
             Expanded(
-              child: PresenceButton(
+              child: AppButton(
                 style: minimalismRed,
-                title: 'Delete',
+                title: secondNamePresenceButton,
                 icon: const Icon(
                   Icons.restore_from_trash,
                 ),
                 onPress: () {
                   setState(() {
-                    isPresence = false;
+                    _isImagePresence = false;
                   });
                 },
               ),

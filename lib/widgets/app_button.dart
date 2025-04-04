@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../utils/sizes.dart';
 import '../style/button_style.dart';
 
-class OpacityButton extends StatelessWidget {
+class AppButton extends StatelessWidget {
   final Function onPress;
   final String title;
   final Icon? icon;
   final ButtonStyle? style;
   final TextStyle? textStyle;
 
-  const OpacityButton({
+  const AppButton({
     required this.onPress,
     required this.title,
     this.icon,

@@ -1,21 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import '../utils/image_urls.dart';
-
-class OpacityFun extends StatelessWidget {
-  final double isOpacity;
-
-  const OpacityFun({
-    required this.isOpacity,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child:
-            Opacity(opacity: isOpacity, child: Image.network(manNarrowEyes)));
-  }
-}
+import '../utils/enum_files.dart';
 
 double calculateOpacity({
   required double correctOpacity,
@@ -34,9 +17,4 @@ double calculateOpacity({
   }
 
   return correctOpacity;
-}
-
-enum OpacityAction {
-  increment,
-  decriment,
 }

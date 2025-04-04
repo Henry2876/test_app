@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_app/function/hidden_screen_fun.dart';
+import '../utils/image_urls.dart';
 import '../utils/translations.dart';
 import '../utils/sizes.dart';
-import '../widgets/hidden_button.dart';
+import '../widgets/app_button.dart';
 import '../style/button_style.dart';
 
 class HiddenScreen extends StatefulWidget {
@@ -14,43 +14,49 @@ class HiddenScreen extends StatefulWidget {
 }
 
 class HiddenScreenState extends State<HiddenScreen> {
-  bool _isHidden = false;
+   bool _isImageHidden = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(firstScreenName),
+        title: Text(getScreenTitle(1)),
         centerTitle: true,
       ),
-      body: Hidden(isHidden: _isHidden),
+      body: Center(
+        child: _isImageHidden
+            ? Image.network(
+          manInGlassesLink,
+        )
+            : Container(),
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(size_16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: HiddenButton(
+              child: AppButton(
                 style: minimalismYellow,
                 onPress: () {
                   setState(() {
-                    _isHidden = true;
+                    _isImageHidden = true;
                   });
                 },
-                title: 'Hidden',
+                title: firstNameHiddenButton,
                 icon: const Icon(CupertinoIcons.hand_point_left),
               ),
             ),
-            const SizedBox(width: 16),
+            const SizedBox(width: size_16),
             Expanded(
-              child: HiddenButton(
+              child: AppButton(
                 style: naturalTones,
                 onPress: () {
                   setState(() {
-                    _isHidden = false;
+                    _isImageHidden = false;
                   });
                 },
-                title: 'Show',
+                title: secondNameHiddenButton,
                 icon: const Icon(CupertinoIcons.hand_point_left_fill),
               ),
             ),

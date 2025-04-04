@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:test_app/utils/image_urls.dart';
 import '../utils/translations.dart';
 
-class EndScreen extends StatefulWidget {
+class EndScreen extends StatelessWidget {
   const EndScreen({super.key});
 
-  @override
-  EndScreenState createState() => EndScreenState();
-}
-
-class EndScreenState extends State<EndScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
